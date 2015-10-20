@@ -46,11 +46,11 @@ class listener(StreamListener):
     def on_error(self, status):
         print status
 
-# print ("Bkp1")
+
 auth = OAuthHandler(ckey, csecret)
-# print ("Bkp2")
+
 auth.set_access_token(atoken, asecret)
-# print ("Bkp3")
+
 
 # api = tweepy.API(auth)
 
@@ -60,6 +60,5 @@ auth.set_access_token(atoken, asecret)
 
 
 twitterStream = Stream(auth, listener())
-# print ("Bkp4")
+
 twitterStream.filter(track=["drug addiction"])
-# print ("Bkp5")
