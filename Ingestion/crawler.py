@@ -12,7 +12,7 @@ import json
 
 #        replace mysql.server with "localhost" if you are running via your own server!
 #                        server       MySQL username	MySQL pass  Database name.
-conn = MySQLdb.connect("localhost","root","rootpass","beginneraccount$tutorial")
+conn = MySQLdb.connect("localhost","root","rootpass","SM_ANALYZER")
 
 c = conn.cursor()
 
@@ -46,11 +46,11 @@ class listener(StreamListener):
     def on_error(self, status):
         print status
 
-# print ("Bkp1")
+
 auth = OAuthHandler(ckey, csecret)
-# print ("Bkp2")
+
 auth.set_access_token(atoken, asecret)
-# print ("Bkp3")
+
 
 # api = tweepy.API(auth)
 
@@ -60,6 +60,5 @@ auth.set_access_token(atoken, asecret)
 
 
 twitterStream = Stream(auth, listener())
-# print ("Bkp4")
+
 twitterStream.filter(track=["drug addiction"])
-# print ("Bkp5")
